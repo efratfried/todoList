@@ -1,0 +1,20 @@
+label{
+    font-size: 14px;
+    color: green;
+    font-weight: bold;
+}
+
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+  }
+  
+  .form-container {
+    background-color: #f0f0f0;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  

@@ -11,6 +11,7 @@ import { TodoFormComponent } from './todo-form/todo-form.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiService } from './api.service';
+import {MatInputModule} from '@angular/material/input';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,8 @@ import { ApiService } from './api.service';
     MatTableModule,
     MatButtonModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatInputModule
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]

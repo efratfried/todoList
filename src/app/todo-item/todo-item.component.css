@@ -1,0 +1,14 @@
+.item {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    background-color: white;
+    border-top: 5px solid green;
+    height: 60px;
+}
+
+.delete-button {
+    margin-left: auto;
+    color:green;
+    margin-right:3%
+}

@@ -24,7 +24,7 @@ export class ListComponent {
 
   deleteTodo(id: number): void {
     this.apiService.deleteTodo(id).subscribe(() => {
-      this.todos = this.todos.filter((todo) => todo.id !== id);
+      this.todos = this.todos.filter((t) => t.id !== id);
     });
     this.loadTodos()
   }

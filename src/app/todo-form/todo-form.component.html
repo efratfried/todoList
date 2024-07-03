@@ -1,8 +1,14 @@
-<div>
-    <label>Title:</label>
-    <input type="text" [(ngModel)]="newTodo.title" name="title" required>
-    <label>Description:</label>
-    <textarea [(ngModel)]="newTodo.description" name="description"></textarea>
-    <button (click)="addTodo()">Add Todo</button>
-  </div>
+<div class="center-container">
+  <div class="form-container">
+    <h3 style="color:green;font-weight: bold;;
+    ">Add New Task</h3>
+    <div >
+      <label>Title:</label>
+      <input matInput  type="text" [(ngModel)]="newTodo.title" name="title" required />
+      <label>Description:</label>
+      <input matInput [(ngModel)]="newTodo.description" name="description"/>
+    </div>
   
+    <button mat-raised-button color="primary" style="color:green;margin-top:10px" (click)="addTodo()">Add Todo</button>
+  </div>
+</div>

@@ -1,6 +1,6 @@
-<div class="todo-item">
+<div class="todo-item item">
     <input type="checkbox" [checked]="todo.completed" (change)="toggleCompleted()">
-    <span class="todo-name">{{ todo.title + ' - '+todo.description }}</span>
-    <button mat-raised-button color="primary" style="margin-left:30px " (click)="deleteTodo()">Delete</button>
+    <span style="font-weight: bold;text-decoration: underline;">{{ todo.title}}</span>
+    <span>{{' - '+todo.description}}</span>
+    <button mat-raised-button color="primary" class="delete-button" (click)="deleteTodo()">Delete</button>
 </div>
-  
