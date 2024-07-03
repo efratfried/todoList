@@ -12,3 +12,10 @@
     color:green;
     margin-right:3%
 }
+
+.text-earsed{
+    text-decoration: line-through;
+}
+.un-done{
+    font-weight: bold;
+}

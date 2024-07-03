@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./todo-form.component.css']
 })
 export class TodoFormComponent {
-  newTodo: Todo = new Todo(0,'','',true);
+  newTodo: Todo = new Todo(0,'','',false);
 
   constructor(private todoService: ApiService,private route:Router) {}
 
@@ -20,7 +20,6 @@ export class TodoFormComponent {
           this.newTodo = new Todo(0, '', '', false);
         });
         this.route.navigate(['/'])
-
     }
   }
 }

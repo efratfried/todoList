@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../api.service';
 import { todo } from '../list.json';
+import { Todo } from '../models/todo';
 
 @Component({
   selector: 'app-list',
@@ -25,7 +26,6 @@ export class ListComponent {
     this.apiService.deleteTodo(id).subscribe(() => {
       this.todos = this.todos.filter((t) => t.id !== id);
     });
-    this.loadTodos()
+    this.loadTodos();
   }
-
 }
