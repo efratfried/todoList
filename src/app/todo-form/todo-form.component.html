@@ -1,0 +1,8 @@
+<div>
+    <label>Title:</label>
+    <input type="text" [(ngModel)]="newTodo.title" name="title" required>
+    <label>Description:</label>
+    <textarea [(ngModel)]="newTodo.description" name="description"></textarea>
+    <button (click)="addTodo()">Add Todo</button>
+  </div>
+  
