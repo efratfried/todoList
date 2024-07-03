@@ -1,3 +1,11 @@
+פיתוח מערכת לניהול משימות (שימוש ב-CRUD)
+החלק הפרונט בנוי באמצעות angular כולל angular material
+הוא מכיל קומפוננטת רשימה - בה מוכלים כל המשימות וכפתור הוספת משימה
+קומפוננטת משימה - תיאור המשימה באמצעות model בשם todo עם אופציית עדכון משימה מלא נעשה לנעשה וכפתור מחיקת משימה
+קומפוננטת הוספת משימה
+
+החלק הבאק בנוי באמצעות express.js אשר מתקשר עם apiService שהוא שירות אנגולר לביצוע ה-CRUD
+
 # TodoList
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.6.
