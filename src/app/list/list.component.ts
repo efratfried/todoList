@@ -22,10 +22,7 @@ export class ListComponent {
     this.apiService.todosLen = this.todos.length;
   }
 
-  deleteTodo(id: number): void {
-    this.apiService.deleteTodo(id).subscribe(() => {
-      this.todos = this.todos.filter((t) => t.id !== id);
-    });
+  handleTodoDeleted(id: number): void {
     this.loadTodos();
   }
 }

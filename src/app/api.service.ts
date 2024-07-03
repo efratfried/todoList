@@ -17,7 +17,7 @@ export class ApiService {
 
   addTodo(todo: Todo): Observable<Todo> {
     return this.http.post<Todo>(this.apiUrl, 
-      {id:this.todosLen+1,title:todo.title,description:todo.description,completed:todo.completed});
+      {...todo,id:this.todosLen+1,});
   }
 
   updateTodo(todo: Todo): Observable<Todo> {
