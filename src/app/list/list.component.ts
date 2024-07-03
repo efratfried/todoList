@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../api.service';
 import { todo } from '../list.json';
-import { Router } from '@angular/router';
-const ELEMENT_DATA: any[] = [{ todo: 1, name: 'ppp' }];
+
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
@@ -11,7 +10,7 @@ const ELEMENT_DATA: any[] = [{ todo: 1, name: 'ppp' }];
 export class ListComponent {
   todos = todo;
 
-  constructor(private apiService: ApiService,private route:Router) {}
+  constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
     this.loadTodos();
