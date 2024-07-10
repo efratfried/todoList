@@ -1,8 +1,8 @@
 <div class="todo-item item">
     <input type="checkbox" [checked]="todo.completed" (change)="toggleCompleted()">
-    <div [ngClass]="{'text-earsed': todo.completed === true, 'un-done': todo.completed===false}">
-        <span >{{ todo.title }}</span>
-        <span>{{' - '+todo.description}}</span>
-    </div>
+    <div [ngClass]="{'text-earsed': todo.completed === true, 'un-done': todo.completed===false,'other_date': chosenDate !== todo.date}">
+        <span class="margin-text">{{ todo.title }}</span>
+        <span class="margin-text">{{todo.description}}</span>
+        <span class="margin-text" *ngIf="chosenDate !== todo.date && todo.priority === priorities.High">{{ todo.date }}</span>    </div>
     <button mat-raised-button color="primary" class="delete-button" (click)="deleteTodo()">Delete</button>
 </div>

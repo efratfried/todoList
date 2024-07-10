@@ -19,3 +19,12 @@
 .un-done{
     font-weight: bold;
 }
+
+.other_date{
+    background-color: rgb(215, 237, 134);
+    font-size: larger;
+  }
+
+  .margin-text{
+    margin-left: 10px;
+  }

@@ -1,14 +1,24 @@
 <div class="center-container">
   <div class="form-container">
-    <h3 style="color:green;font-weight: bold;;
-    ">Add New Task</h3>
-    <div >
+    <h3 style="color: green; font-weight: bold;">Add New Task</h3>
+    
+    <div>
       <label>Title:</label>
-      <input matInput  type="text" [(ngModel)]="newTodo.title" name="title" required />
-      <label>Description:</label>
-      <input matInput [(ngModel)]="newTodo.description" name="description"/>
+      <input matInput type="text" [(ngModel)]="newTodo.title" name="title" required />
     </div>
-  
-    <button mat-raised-button color="primary" style="color:green;margin-top:10px" (click)="addTodo()">Add Todo</button>
+
+    <div>
+      <label>Description:</label>
+      <input matInput [(ngModel)]="newTodo.description" name="description" />
+    </div>
+
+    <mat-form-field>
+      <mat-label>Priority</mat-label>
+      <mat-select [(ngModel)]="priority" (selectionChange)="prioritySelected($event)">       
+        <mat-option *ngFor="let p of priorityList" [value]="p">{{ p }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button  mat-raised-button color="primary" style="color: green; margin-top: 10px;" (click)="addTodo()">Add Todo</button>
   </div>
 </div>

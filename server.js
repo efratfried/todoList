@@ -9,8 +9,8 @@ app.use(cors());
 app.use(bodyParser.json());
 
 let todos = [
-  { id: 1, title: 'First Todo', description: 'This is the first todo', completed: false ,date:'10.7.2024'},
-  { id: 2, title: 'Second Todo', description: 'This is the second todo', completed: true,date:'10.7.2024' }
+  { id: 1, title: 'First Todo', description: 'This is the first todo', completed: false ,date:'10.7.2024',priority:'high'},
+  { id: 2, title: 'Second Todo', description: 'This is the second todo', completed: true,date:'10.7.2024',priority:'low' }
 ];
 
 app.get('/todos', (req, res) => {
@@ -23,7 +23,8 @@ app.post('/todos', (req, res) => {
     title: req.body.title,
     description: req.body.description,
     completed: req.body.completed,
-    date:req.body.date
+    date:req.body.date,
+    priority:req.body.priority
   };
   todos.push(newTodo);
   res.status(201).json(newTodo);
@@ -33,7 +34,7 @@ app.put('/todos/:id', (req, res) => {
   const id = parseInt(req.params.id);
   const updatedTodo = req.body;
   todos = todos.map(todo => todo.id === id ? { ...todo, ...updatedTodo } : todo);
-  res.status(200).json(updatedTodo);
+  res.status(200).json(todos);
 });
 
 app.delete('/todos/:id', (req, res) => {
