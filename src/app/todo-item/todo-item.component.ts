@@ -5,10 +5,10 @@ import { ApiService } from '../api.service';
 @Component({
   selector: 'app-todo-item',
   templateUrl: './todo-item.component.html',
-  styleUrls: ['./todo-item.component.css']
+  styleUrls: ['./todo-item.component.css'],
 })
 export class TodoItemComponent {
-  @Input() todo: Todo=new Todo(0,'','',false);
+  @Input() todo: Todo = new Todo(0, '', '', false, '');
   @Output() todoDeleted = new EventEmitter<number>();
 
   constructor(private apiService: ApiService) {}
@@ -16,10 +16,10 @@ export class TodoItemComponent {
   toggleCompleted() {
     this.todo.completed = !this.todo.completed;
     this.apiService.updateTodo(this.todo).subscribe(
-      updatedTodo => {
+      (updatedTodo) => {
         console.log('Todo updated:', updatedTodo);
       },
-      error => {
+      (error) => {
         console.error('Error updating todo:', error);
       }
     );
@@ -31,7 +31,7 @@ export class TodoItemComponent {
         console.log('Todo deleted:', this.todo.id);
         this.todoDeleted.emit(this.todo.id);
       },
-      error => {
+      (error) => {
         console.error('Error deleting todo:', error);
       }
     );

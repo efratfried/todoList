@@ -12,6 +12,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiService } from './api.service';
 import {MatInputModule} from '@angular/material/input';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {provideNativeDateAdapter} from '@angular/material/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatNativeDateModule } from '@angular/material/core';
+import { DatePipe } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,9 +32,14 @@ import {MatInputModule} from '@angular/material/input';
     MatButtonModule,
     FormsModule,
     HttpClientModule,
-    MatInputModule
+    MatInputModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    BrowserAnimationsModule ,
+    MatNativeDateModule 
+    
   ],
-  providers: [ApiService],
+  providers: [ApiService,provideNativeDateAdapter(),DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -9,8 +9,8 @@ app.use(cors());
 app.use(bodyParser.json());
 
 let todos = [
-  { id: 1, title: 'First Todo', description: 'This is the first todo', completed: false },
-  { id: 2, title: 'Second Todo', description: 'This is the second todo', completed: true }
+  { id: 1, title: 'First Todo', description: 'This is the first todo', completed: false ,date:'10.7.2024'},
+  { id: 2, title: 'Second Todo', description: 'This is the second todo', completed: true,date:'10.7.2024' }
 ];
 
 app.get('/todos', (req, res) => {
@@ -22,7 +22,8 @@ app.post('/todos', (req, res) => {
     id: todos.length + 1,
     title: req.body.title,
     description: req.body.description,
-    completed: req.body.completed
+    completed: req.body.completed,
+    date:req.body.date
   };
   todos.push(newTodo);
   res.status(201).json(newTodo);

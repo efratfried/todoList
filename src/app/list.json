@@ -1,8 +1,8 @@
 {"todo":
     [
-        {"id":1,"title":"clean","description":"the bathroom","completed":false},
-        {"id":1,"title":"clean","description":"the room","completed":false},
-        {"id":1,"title":"clean","description":"the sofa","completed":false},
-        {"id":1,"title":"brush","description":"teeth","completed":false}
+        {"id":1,"title":"clean","description":"the bathroom","completed":false,"date":"10.07.2024"},
+        {"id":1,"title":"clean","description":"the room","completed":false,"date":"10.07.2024"},
+        {"id":1,"title":"clean","description":"the sofa","completed":false,"date":"10.07.2024"},
+        {"id":1,"title":"brush","description":"teeth","completed":false,"date":"10.07.2024"}
     ]
 }

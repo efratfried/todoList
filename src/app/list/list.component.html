@@ -6,22 +6,31 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  ">  Todo List</h1>
+  "> Todo List</h1>
 
 <div class="center-container">
-  <div class="content-container">
-    <br />
-    <button
-      mat-raised-button
-      color="primary"
-      style="color: green; margin-bottom: 10px"
-      routerLink="/add-task"
-    >
-      Add Task
-    </button>
 
-    <div *ngFor="let todo of todos">
-      <app-todo-item [todo]="todo" (todoDeleted)="handleTodoDeleted($event)"></app-todo-item>
+  <div class="content-container">
+
+    <mat-form-field class="centered-datepicker">
+      <mat-label>Choose a date</mat-label>
+      <input matInput [matDatepicker]="picker" (dateChange)="dateChanged($event)"/>
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <br />
+
+
+    <div *ngIf="chosenDate!==''">
+      <button mat-raised-button color="primary" style="color: green; margin-bottom: 10px" [routerLink]="['/add-task']" [queryParams]="{ chosenDate: chosenDate }">Add Task</button>
+
+      <span>{{chosenDate}}</span>
+
+      <div *ngFor="let todo of todos">
+        <app-todo-item [todo]="todo" (todoDeleted)="handleTodoDeleted($event)"></app-todo-item>
+      </div>
     </div>
   </div>
 </div>
